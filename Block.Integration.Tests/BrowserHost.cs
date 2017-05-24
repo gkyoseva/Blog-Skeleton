@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using TestStack.Seleno;
 using TestStack.Seleno.Configuration;
 
-namespace Block.UI.Tests
+namespace Block.Integration.Tests
 {
     public static class BrowserHost
     {
@@ -19,7 +19,7 @@ namespace Block.UI.Tests
         {
             //Instance.Run("Blog", 60634, w => w.WithRemoteWebDriver(() => new FirefoxDriver()));
 
-            Instance.Run("Blog", 60634, config => config.WithRemoteWebDriver(() => new FirefoxDriver()));
+            Instance.Run("Blog", 60634, config => config.WithRemoteWebDriver(() => new ChromeDriver()));
             RootUrl = Instance.Application.Browser.Url;
         }
     }
