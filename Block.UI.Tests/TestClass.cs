@@ -20,10 +20,12 @@ namespace Block.UI.Tests
             IWebDriver driver = BrowserHost.Instance.Application.Browser;
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
 
-            driver.Navigate().GoToUrl(@"http://localhost:60639/Article/List");
-          
+            driver.Navigate().GoToUrl(@"http://localhost:60634/Article/List");
+
             var logo = wait.Until(w => w.FindElement(By.XPath("/html/body/div[1]/div/div[1]/a")));
             
+            //var logo = wait.Until(w => w.FindElement(By.ClassName("navbar - brand")));
+
             Assert.AreEqual("SOFTUNI BLOG", logo.Text);
         }
     }
